@@ -15,6 +15,14 @@
                 <textarea class="form-control" placeholder="Leave a description here" id="description" name="description"></textarea>
             </div>
             <div class="mb-3">
+                <label for="thumb" class="form-label">thumb</label>
+                <input type="text" class="form-control" id="thumb" name="thumb">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">price</label>
+                <input type="text" class="form-control" id="price" name="price">
+            </div>
+            <div class="mb-3">
                 <label for="series" class="form-label">Series</label>
                 <input type="text" class="form-control" id="series" name="series">
             </div>
@@ -24,7 +32,7 @@
             </div>
             <div class="mb-3">
                 <label for="type" class="form-label">Type</label>
-                <input type="date" class="form-control" id="type" name="type">
+                <input type="text" class="form-control" id="type" name="type">
             </div>
             <button type="submit" class="btn btn-primary">Go</button>
         </form>
