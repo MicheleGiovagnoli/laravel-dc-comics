@@ -12,7 +12,10 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('comics.index') }}">card</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('comics.index') }}">List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ route('comics.create') }}">Create</a>
                     </li>
                 </ul>
             </div>

@@ -4,8 +4,8 @@
 
 @section('content')
     <main>
-        <p>
-            main
-        </p>
+        <div class="container">
+            <h1>pagina principale</h1>
+        </div>
     </main>
 @endsection

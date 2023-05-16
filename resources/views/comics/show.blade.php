@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title', 'Mostra')
+@section('page-title', 'Mostra info')
 
 @section('content')
     <main>
