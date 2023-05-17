@@ -3,7 +3,6 @@
 @section('page-title', 'lista')
 
 @section('content')
-
     <table class="table table-stripped">
         <thead>
             <tr>
@@ -23,14 +22,15 @@
                     <td>{{ $comic->title }}</td>
                     <td>{{ $comic->series }}</td>
                     <td>{{ $comic->type }}</td>
-                    <td><a class="btn btn-secondary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">Info</a></td>
+                    <td><a class="btn btn-secondary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">Info</a>
+                    </td>
                     <td><a class="btn btn-success" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">modifica</a>
                     </td>
                     <td>
                         <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger" type="submit">Elimina</button>
+                            <button class="btn btn-danger box" type="submit">Elimina</button>
                         </form>
                     </td>
                 </tr>
