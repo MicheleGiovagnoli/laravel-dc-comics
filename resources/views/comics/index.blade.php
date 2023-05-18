@@ -10,6 +10,8 @@
                 <th scope="col">Title</th>
                 <th scope="col">Series</th>
                 <th scope="col">type</th>
+                <th scope="col">Date</th>
+                <th scope="col">Price</th>
                 <th scope="col">info</th>
                 <th scope="col">Modifica</th>
                 <th scope="col">Elimina</th>
@@ -22,6 +24,8 @@
                     <td>{{ $comic->title }}</td>
                     <td>{{ $comic->series }}</td>
                     <td>{{ $comic->type }}</td>
+                    <td>{{ $comic->sale_date }}</td>
+                    <td>{{ $comic->price }}</td>
                     <td><a class="btn btn-secondary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">Info</a>
                     </td>
                     <td><a class="btn btn-success" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">modifica</a>
@@ -30,7 +34,8 @@
                         <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger box" type="submit">Elimina</button>
+                            <button class="btn btn-danger" type="submit"
+                                onclick="return confirm('ciao ciccio')">Elimina</button>
                         </form>
                     </td>
                 </tr>

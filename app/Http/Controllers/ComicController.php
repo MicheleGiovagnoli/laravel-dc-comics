@@ -36,8 +36,19 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $form_data = $request->all();
-
+            //Validazione dei dati
+            //utilizzando un'array associativo
+            //require: riuchiede qualcosa 
+            $request->validate([
+                'title'=>'required|max:50',
+                'description'=>'nullable|max:65535',
+                'thumb'=>'required|url|max:255',
+                'price'=>'required|max:10',
+                'series'=>'required|max:50',
+                'sale_date'=>'date:10',
+                'type'=>'required|max:20'
+            ]);
+            $form_data = $request->all();
             $newComic = new Comic();
             $newComic->fill($form_data);
             // $newComic->title = $form_data['title'];
@@ -49,7 +60,7 @@ class ComicController extends Controller
             // $newComic->type = $form_data['type'];
             $newComic->save();
 
-            return redirect()->route('comics.index');
+            return redirect()->route('comics.index')->with('status', 'Aggiunto con successo');
     }
 
     /**
@@ -86,9 +97,19 @@ class ComicController extends Controller
     public function update(Request $request, Comic $comic)
     {
         // $comic = Comic::findOrFail($id);
+        $request->validate([
+            'title'=>'required|max:50',
+            'description'=>'nullable|max:65535',
+            'thumb'=>'required|url|max:255',
+            'price'=>'required|max:10',
+            'series'=>'required|max:50',
+            'sale_date'=>'date:10',
+            'type'=>'required|max:20'
+        ]);
+        
         $form_data = $request->all();
         $comic->update($form_data);
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('status', 'Aggiornato con successo');
     }
 
     /**
