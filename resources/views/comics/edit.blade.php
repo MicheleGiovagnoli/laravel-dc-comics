@@ -3,9 +3,9 @@
 @section('page-title', 'Mostra info')
 
 @section('content')
-    <main>
+    <main class="p-5 bg-success">
         {{-- Sulla action metto la rotta sulla update e gli passo l'id --}}
-        <form method="POST" action="{{ route('comics.update', ['comic' => $comic->id]) }}">
+        <form class="p-5 bg-secondary" method="POST" action="{{ route('comics.update', ['comic' => $comic->id]) }}">
             {{-- csrf metodo di protezione --}}
             @csrf
             {{-- Il form accetta come parametri solo POST o GET , quindi creiamo questo metodo speciale per cambiare il metodo --}}

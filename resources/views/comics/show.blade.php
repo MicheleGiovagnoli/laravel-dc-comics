@@ -3,7 +3,7 @@
 @section('page-title', 'Mostra info')
 
 @section('content')
-    <main>
+    <main class="d-flex justify-content-center bg-success p-5 ">
         <div class="card" style="width: 18rem;">
             <img src="{{ $comic->thumb }}" class="card-img-top" alt="{{ $comic->title }}">
             <div class="card-body">
